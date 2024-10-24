@@ -16,7 +16,7 @@ Proactive maintenance is crucial in industrial operations to ensure the reliabil
 The dataset is obtained from Kaggle, which contains five `.csv` files describing different events (error, failure, and maintenance) and the sensor data for each machine.
 
 ## Approach
-- **`convert.ipynb`**: Aggregated the hourly machine data into daily data over a 24-hour period. The original hourly data was imbalanced, with a higher frequency of non-failure entries compared to failure entries.
+- **`convert.ipynb`**: Aggregated the hourly machine data into daily data over 24-hour periods. The original hourly data was imbalanced, with a higher frequency of non-failure entries compared to failure entries.
 - **`mainmodel.ipynb`**: Developed an LSTM model to predict machine failures using time-series data on pressure, vibration, speed, and temperature. To handle data imbalance, I applied SMOTE, standardized the variables, and performed comprehensive data preprocessing. Additionally, I categorized the severity levels of the failures. The model achieved an F1 score of 0.97, indicating high accuracy in predicting and classifying failure severities.
 - **`input.ipynb`**: Implemented a feature that takes user input regarding machine conditions. Based on this input, an automated email is sent to the user, specifying the detected type of machine failure and recommending appropriate preventive measures to mitigate the issue. This system helps provide users with timely guidance on addressing potential equipment failures.
 - **`refresh.ipynb`**: Implemented a feature to collect user input regarding machine conditions and automatically store this information in a CSV file for record-keeping.
